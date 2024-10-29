@@ -1,16 +1,12 @@
-// src/server.ts
+import express from "express";
+import authRoutes from "./routes/authRoute";
+import bookRoutes from "./routes/bookRoute";
 
-import express from 'express';
-import dotenv from 'dotenv';
-import bookRoutes from './routes/bookRoutes';
-
-dotenv.config();
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Usando as rotas de livros
-app.use('/api', bookRoutes);
-
-const PORT = process.env.PORT || 3000;
+app.use(authRoutes);
+app.use(bookRoutes);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

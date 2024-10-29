@@ -11,5 +11,8 @@ export const getAllBooks = async (req: Request, res: Response) => {
 export const addBook = async (req: Request, res: Response) => {
   const { title, author, price } = req.body;
   const book = await bookRepository.addBook(title, author, price);
-  res.status(201).json(book);
+    res.status(201).json(book);
+  } catch (err) {
+    res.status(401).json({ error: "erro ao adicionar livro" });
+  }
 };
