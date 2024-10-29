@@ -1,0 +1,23 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev src/server.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2",
+    "jest": "^27.2.5",
+    "@types/jest": "^27.0.2",
+    "ts-jest": "^27.0.5",
+    "supertest": "^6.1.6",
+    "@types/express": "^4.17.12",
+    "ts-node-dev": "^1.1.8"
+  }
+}
